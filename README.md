@@ -57,51 +57,57 @@ The entire system was designed, developed, tested, and documented individually.
 
 ## 🏗️ Project Architecture
 
+## 🏗️ Project Architecture
+
+```text
 SkillHub/
-├── Admin/                        # Admin panel
-│   ├── Action/                   # Form handlers
-│   │   ├── active-course.php     # Course activation
-│   │   ├── active-Instructor.php # Instructor activation
-│   │   ├── active-student.php    # Student activation
-│   │   └── instructor-add.php    # Add new instructor
-│   ├── inc/                      # Shared components
+├── Admin/
+│   ├── Action/
+│   │   ├── active-course.php          # Course activation
+│   │   ├── active-Instructor.php      # Instructor activation
+│   │   ├── active-student.php         # Student activation
+│   │   └── instructor-add.php         # Add new instructor
+│   ├── inc/
 │   │   ├── Header.php
 │   │   ├── Footer.php
 │   │   └── NavBar.php
-│   ├── Courses.php               # Course management view
-│   ├── Instructors.php           # Instructor management view
-│   ├── Student.php               # Student management view
-│   └── System-Analysis.php       # Analytics dashboard
+│   ├── Courses.php                    # Course management view
+│   ├── Instructors.php                # Instructor management view
+│   ├── Student.php                    # Student management view
+│   └── System-Analysis.php            # Analytics dashboard
 │
-├── Instructor/                   # Instructor panel
-│   ├── Action/                   # Form handlers
-│   │   ├── course-add.php        # Create new course
-│   │   ├── upload-materials.php  # Upload study materials
-│   │   ├── create-content.php    # Create lecture content
-│   │   ├── course-chapter-add.php
-│   │   ├── course-topic-add.php
-│   │   └── load-chapters.php
-│   ├── inc/                      # Shared components
+├── Instructor/
+│   ├── Action/
+│   │   ├── course-add.php             # Create new course
+│   │   ├── upload-materials.php       # Upload study materials
+│   │   ├── create-content.php         # Create lecture content
+│   │   ├── course-chapter-add.php     # Add chapters
+│   │   ├── course-topic-add.php       # Add topics
+│   │   └── load-chapters.php          # Load chapter list
+│   ├── inc/
 │   │   ├── Header.php
 │   │   ├── Footer.php
 │   │   ├── NavBar.php
 │   │   └── Profile.php
-│   ├── Courses.php               # Course listing
-│   ├── Courses-add.php           # New course form
-│   ├── Courses-content-add.php   # Add lecture content
-│   ├── Courses-Materials.php     # Materials management
-│   ├── Certificate-Generate.php  # Issue certificates
-│   └── Profile-Edit.php          # Edit instructor profile
+│   ├── Courses.php                    # Course listing
+│   ├── Courses-add.php                # New course form
+│   ├── Courses-content-add.php        # Add lecture content
+│   ├── Courses-Materials.php          # Materials management
+│   ├── Certificate-Generate.php       # Issue certificates
+│   └── Profile-Edit.php               # Edit instructor profile
 │
-├── Student/                      # Student panel
-│   └── inc/                      # Shared components
+├── Student/
+│   └── inc/
+│       ├── Header.php
+│       ├── Footer.php
+│       └── NavBar.php
 │
-├── Controller/                   # MVC Controllers
+├── Controller/
 │   ├── Admin/
-│   │   ├── Course.php            # Course logic
-│   │   ├── Instructor.php        # Instructor logic
-│   │   ├── Student.php           # Student logic
-│   │   └── system.php            # Analytics logic
+│   │   ├── Course.php                 # Course logic
+│   │   ├── Instructor.php             # Instructor logic
+│   │   ├── Student.php                # Student logic
+│   │   └── system.php                 # Analytics logic
 │   ├── Instructor/
 │   │   ├── Course.php
 │   │   ├── CoursesMaterial.php
@@ -112,33 +118,34 @@ SkillHub/
 │       ├── EnrolledStudent.php
 │       └── Student.php
 │
-├── Models/                       # Database layer
-│   ├── Course.php                # Course CRUD operations
-│   ├── Student.php               # Student data management
-│   ├── Instructor.php            # Instructor data management
-│   ├── Certificate.php           # Certificate generation logic
-│   ├── EnrolledStudent.php       # Enrollment tracking
-│   ├── CoursesMaterial.php       # Materials management
-│   └── Admin.php                 # Admin operations
+├── Models/
+│   ├── Course.php                     # Course CRUD operations
+│   ├── Student.php                    # Student data management
+│   ├── Instructor.php                 # Instructor data management
+│   ├── Certificate.php                # Certificate generation logic
+│   ├── EnrolledStudent.php            # Enrollment tracking
+│   ├── CoursesMaterial.php            # Materials management
+│   └── Admin.php                      # Admin operations
 │
-├── Action/                       # Root form handlers
-│   ├── login.php
-│   └── signup.php
+├── Action/
+│   ├── login.php                      # Login handler
+│   └── signup.php                     # Registration handler
 │
-├── Utils/                        # Utility classes
-│   ├── Util.php                  # Helper functions
-│   └── Validation.php            # Input validation and sanitization
+├── Utils/
+│   ├── Util.php                       # Helper functions
+│   └── Validation.php                 # Input validation and sanitization
 │
-├── Assets/                       # Frontend resources
-│   ├── css/                      # Bootstrap 5, FontAwesome, custom styles
-│   ├── js/                       # jQuery, jsPDF, custom scripts
-│   ├── fonts/                    # FontAwesome fonts
-│   └── img/                      # Images, logo, signatures
+├── Assets/
+│   ├── css/                           # Bootstrap 5, FontAwesome, custom styles
+│   ├── js/                            # jQuery, jsPDF, custom scripts
+│   ├── fonts/                         # FontAwesome fonts
+│   └── img/                           # Images, logo, signatures
 │
-├── Database_sample.php           # Sample database configuration
-├── index.php                     # Landing page
-├── login.php                     # Login page
-├── signup.php                    # Registration page
-├── about.php                     # About page
-├── certificate.php               # Public certificate verification
-└── 404.php                       # Custom error page
+├── Database_sample.php                # Sample database configuration
+├── index.php                          # Landing page
+├── login.php                          # Login page
+├── signup.php                         # Registration page
+├── about.php                          # About page
+├── certificate.php                    # Public certificate verification
+└── 404.php                            # Custom error page
+```
